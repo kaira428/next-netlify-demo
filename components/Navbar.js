@@ -23,6 +23,7 @@ export default function Navbar() {
               <a>Guides</a>
             </Link>
           </li>
+          {user && <li>{user.email}</li>}
           {user && <li onClick={logout} className='btn'>Logout</li>}
           {!user && <li onClick={login} className='btn'>Login/Signup</li>}
         </ul>
