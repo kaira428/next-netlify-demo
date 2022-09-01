@@ -32,13 +32,13 @@ export const AuthContextProvider = ({ children }) => {
     // init netlify identity connection
     netlifyIdentity.init();
 
-    // Clean up function
+    // Clean up functions
     return () => {
         netlifyIdentity.off('login');
         netlifyIdentity.off('logout');
         netlifyIdentity.off('init');
     }
-  }, []);
+  }, [user]);
 
   const login = () => {
     netlifyIdentity.open();
